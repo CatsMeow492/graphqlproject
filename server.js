@@ -1,8 +1,14 @@
-import { gql } from 'apollo-server';
+import { ApolloServer, gql } from 'apollo-server';
 
 const typeDefs = gql`
   type Query {
     greeting: String
 }`;
 
-console.log(typeDefs)
+const resolver = {
+    Query: {
+        greeting: () => 'Hello World'
+    },
+};
+
+const server = new ApolloServer({ typeDefs, resolver });
