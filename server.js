@@ -12,3 +12,4 @@ const resolver = {
 };
 
 const server = new ApolloServer({ typeDefs, resolver });
+server.listen({ port: 9000 })
