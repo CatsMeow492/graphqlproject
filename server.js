@@ -9,7 +9,7 @@ const typeDefs = gql`
     }
 `;
 
-const resolver = {
+const resolvers = {
   Query: {
     greeting() {
         return "Hello World"
@@ -17,6 +17,6 @@ const resolver = {
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolver });
-const serverInfo = await server.listen({ port: 9000 })
+const server = new ApolloServer({ typeDefs, resolvers });
+const serverInfo = await server.listen({ port: 3001 })
 console.log(`Server running at ${serverInfo.url}`);
